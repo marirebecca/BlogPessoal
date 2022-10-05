@@ -34,15 +34,18 @@ public class Postagem {
 	@UpdateTimestamp
 	private LocalDateTime data;
 	
-	/*
-	 * @ManyToOne
-	 * 
-	 * @JsonIgnoreProperties("postagem") private Tema tema;
-	 * 
-	 * public Tema getTema() { return tema; }
-	 * 
-	 * public void setTema(Tema tema) { this.tema = tema; }
-	 */
+	@ManyToOne
+	@JsonIgnoreProperties("postagem") 
+	private Tema tema;
+
+	public Tema getTema() {
+		return tema; 
+	}
+
+	public void setTema(Tema tema) { 
+		this.tema = tema; 
+	}
+	 
 
 	public Long getId() {
 		return id;
